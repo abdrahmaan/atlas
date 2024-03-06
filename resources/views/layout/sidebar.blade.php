@@ -3,7 +3,7 @@
 		<nav class="sidebar">
             <div class="sidebar-header">
               <a href="/dashboard" class="sidebar-brand">
-                Barq<span>Express</span>
+                Atlas<span>Golden</span>
               </a>
               <div class="sidebar-toggler not-active">
                 <span></span>
@@ -20,20 +20,37 @@
                     <span class="link-title">لوحة التحكم</span>
                   </a>
                 </li>
-                <li class="nav-item nav-category">السائقين وخطوط السير</li>
+                <li class="nav-item nav-category"> العملاء</li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="collapse" href="#client-personal" role="button" aria-expanded="false" aria-controls="emails">
+                    <i class="link-icon" data-feather="users"></i>
+                    <span class="link-title">العميل الفردى</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="client-personal">
+                    <ul class="nav sub-menu">
+                      <li class="nav-item">
+                        <a href="pages/email/inbox.html" class="nav-link">إضافة عميل فردى</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="pages/email/read.html" class="nav-link"> العملاء الفرديين</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
                 <li class="nav-item">
                   <a class="nav-link" data-bs-toggle="collapse" href="#driver" role="button" aria-expanded="false" aria-controls="emails">
                     <i class="link-icon" data-feather="users"></i>
-                    <span class="link-title"> السائقين</span>
+                    <span class="link-title">العميل التجارى</span>
                     <i class="link-arrow" data-feather="chevron-down"></i>
                   </a>
                   <div class="collapse" id="driver">
                     <ul class="nav sub-menu">
                       <li class="nav-item">
-                        <a href="pages/email/inbox.html" class="nav-link">إضافة سائق</a>
+                        <a href="pages/email/inbox.html" class="nav-link">إضافة عميل تجارى</a>
                       </li>
                       <li class="nav-item">
-                        <a href="pages/email/read.html" class="nav-link">بحث فى السائقين</a>
+                        <a href="pages/email/read.html" class="nav-link"> العملاء التجاريين</a>
                       </li>
                     </ul>
                   </div>
@@ -41,122 +58,143 @@
                 <li class="nav-item">
                   <a class="nav-link" data-bs-toggle="collapse" href="#road" role="button" aria-expanded="false" aria-controls="emails">
                     <i class="link-icon" data-feather="git-merge"></i>
-                    <span class="link-title"> خطوط السير</span>
+                    <span class="link-title">عمليات</span>
                     <i class="link-arrow" data-feather="chevron-down"></i>
                   </a>
                   <div class="collapse" id="road">
                     <ul class="nav sub-menu">
                       <li class="nav-item">
-                        <a href="pages/email/inbox.html" class="nav-link">إضافة خط سير</a>
+                        <a href="pages/email/read.html" class="nav-link">المطالبات المالية</a>
                       </li>
                       <li class="nav-item">
-                        <a href="pages/email/read.html" class="nav-link">بحث فى خطوط السير</a>
+                        <a href="pages/email/read.html" class="nav-link">دفعات العملاء</a>
                       </li>
+                      <li class="nav-item">
+                        <a href="pages/email/inbox.html" class="nav-link">مواعيد العملاء</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="pages/email/read.html" class="nav-link">خطابات العملاء</a>
+                      </li>
+                      
                     </ul>
                   </div>
                 </li>
-                <li class="nav-item nav-category">السيارات</li>
+                <li class="nav-item nav-category">الأعطال الفنية</li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="collapse" href="#fix" role="button" aria-expanded="false" aria-controls="emails">
+                    <i class="link-icon" data-feather="cloud-lightning"></i>
+                    <span class="link-title">بلاغات الأعطال</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="fix">
+                    <ul class="nav sub-menu">
+                      <li class="nav-item">
+                        <a href="pages/email/read.html" class="nav-link">إضافة بلاغ جديد</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="pages/email/read.html" class="nav-link">بلاغات الأعطال</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item nav-category">المشاريع والصيانة</li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="collapse" href="#fix3" role="button" aria-expanded="false" aria-controls="emails">
+                    <i class="link-icon" data-feather="cloud-lightning"></i>
+                    <span class="link-title">إدارة المشاريع</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="fix3">
+                    <ul class="nav sub-menu">
+                      <li class="nav-item">
+                        <a href="pages/email/read.html" class="nav-link">عقود توريد مصعد</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="pages/email/read.html" class="nav-link"> عقود تحديث مصعد</a>
+                      </li>
+                     
+                      
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="collapse" href="#fix2" role="button" aria-expanded="false" aria-controls="emails">
+                    <i class="link-icon" data-feather="cloud-lightning"></i>
+                    <span class="link-title">إدارة الصيانة</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="fix2">
+                    <ul class="nav sub-menu">
+                      <li class="nav-item">
+                        <a href="pages/email/read.html" class="nav-link">عقود الصيانة</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="pages/email/read.html" class="nav-link"> تقرير صيانة جديد</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="pages/email/read.html" class="nav-link">تقارير الصيانة</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item nav-category">عروض الأسعار</li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="collapse" href="#price-list" role="button" aria-expanded="false" aria-controls="emails">
+                    <i class="link-icon" data-feather="cloud-lightning"></i>
+                    <span class="link-title">عروض الأسعار</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="price-list">
+                    <ul class="nav sub-menu">
+                      <li class="nav-item">
+                        <a href="pages/email/read.html" class="nav-link">عقود توريد مصعد</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="pages/email/read.html" class="nav-link"> عقود تحديث مصعد</a>
+                      </li>
+                     
+                      
+                    </ul>
+                  </div>
+                </li>
+                
+                <li class="nav-item nav-category">المبيعات</li>
                 <li class="nav-item" data-url="car">
                   <a class="nav-link" data-bs-toggle="collapse" href="#cars" role="button" aria-expanded="false" aria-controls="emails">
                     <i class="link-icon" data-feather="aperture"></i>
-                    <span class="link-title"> السيارات</span>
+                    <span class="link-title"> إدارة المبيعات</span>
                     <i class="link-arrow" data-feather="chevron-down"></i>
                   </a>
                   <div class="collapse" id="cars">
                     <ul class="nav sub-menu">
                       <li class="nav-item">
-                        <a href="/new-car" class="nav-link">إضافة سيارة</a>
+                        <a href="/new-car" class="nav-link">المبيعات الجديدة</a>
                       </li>
-                      <li class="nav-item">
-                        <a href="/cars" class="nav-link">بحث فى السيارات</a>
-                      </li>
+
                     </ul>
                   </div>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="collapse" href="#move" role="button" aria-expanded="false" aria-controls="emails">
-                    <i class="link-icon" data-feather="activity"></i>
-                    <span class="link-title">حركة السيارات</span>
-                    <i class="link-arrow" data-feather="chevron-down"></i>
-                  </a>
-                  <div class="collapse" id="move">
-                    <ul class="nav sub-menu">
-                      <li class="nav-item">
-                        <a href="pages/email/inbox.html" class="nav-link">إضافة حركة جديدة</a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="pages/email/read.html" class="nav-link">بحث فى التحركات</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="collapse" href="#zeet" role="button" aria-expanded="false" aria-controls="emails">
-                    <i class="link-icon" data-feather="cloud-snow"></i>
-                    <span class="link-title">زيت السيارات</span>
-                    <i class="link-arrow" data-feather="chevron-down"></i>
-                  </a>
-                  <div class="collapse" id="zeet">
-                    <ul class="nav sub-menu">
-                      <li class="nav-item">
-                        <a href="pages/email/inbox.html" class="nav-link">تغيير زيت سيارة</a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="pages/email/read.html" class="nav-link">بحث فى تغيير الزيت</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="collapse" href="#gaz" role="button" aria-expanded="false" aria-controls="emails">
-                    <i class="link-icon" data-feather="cloud-rain"></i>
-                    <span class="link-title">وقود السيارات</span>
-                    <i class="link-arrow" data-feather="chevron-down"></i>
-                  </a>
-                  <div class="collapse" id="gaz">
-                    <ul class="nav sub-menu">
-                      <li class="nav-item">
-                        <a href="pages/email/inbox.html" class="nav-link">تموين وقود سيارة</a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="pages/email/read.html" class="nav-link">بحث فى تموين الوقود</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="collapse" href="#maintaince" role="button" aria-expanded="false" aria-controls="emails">
-                    <i class="link-icon" data-feather="cloud-lightning"></i>
-                    <span class="link-title">صيانة السيارات</span>
-                    <i class="link-arrow" data-feather="chevron-down"></i>
-                  </a>
-                  <div class="collapse" id="maintaince">
-                    <ul class="nav sub-menu">
-                      <li class="nav-item">
-                        <a href="pages/email/inbox.html" class="nav-link">إضافة صيانة</a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="pages/email/read.html" class="nav-link">بحث فى الصيانات</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-                <li class="nav-item nav-category">المستخدمين</li>
+               
+                <li class="nav-item nav-category">الموظفين</li>
                 <li class="nav-item" data-url="user">
                   <a class="nav-link" data-bs-toggle="collapse" href="#users" role="button" aria-expanded="false" aria-controls="emails">
                     <i class="link-icon" data-feather="user"></i>
-                    <span class="link-title">المستخدمين</span>
+                    <span class="link-title">إدارة الموظفين</span>
                     <i class="link-arrow" data-feather="chevron-down"></i>
                   </a>
                   <div class="collapse" id="users">
                     <ul class="nav sub-menu">
                       <li class="nav-item">
-                        <a href="/new-user" class="nav-link">إضافة مستخدم</a>
+                        <a href="/new-user" class="nav-link">إضافة موظف</a>
                       </li>
                       <li class="nav-item">
-                        <a href="/users" class="nav-link">بحث فى المستخدمين</a>
+                        <a href="/users" class="nav-link">بحث فى الموظفين</a>
                       </li>
-                      <li class="nav-item d-none">
+                      <li class="nav-item">
                         <a href="pages/email/read.html" class="nav-link">صلاحيات الموظفين</a>
                       </li>
                     </ul>
@@ -164,6 +202,21 @@
                 </li>
                 
                 <li class="nav-item nav-category">الإعدادات</li>
+                <li class="nav-item" data-url="car">
+                  <a class="nav-link" data-bs-toggle="collapse" href="#sett" role="button" aria-expanded="false" aria-controls="emails">
+                    <i class="link-icon" data-feather="aperture"></i>
+                    <span class="link-title"> إدارة المبيعات</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="sett">
+                    <ul class="nav sub-menu">
+                      <li class="nav-item">
+                        <a href="/new-car" class="nav-link">المبيعات الجديدة</a>
+                      </li>
+
+                    </ul>
+                  </div>
+                </li>
                 <li class="nav-item" data-url="change-password">
                   <a href="/change-password" class="nav-link">
                     <i class="link-icon" data-feather="key"></i>

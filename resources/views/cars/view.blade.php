@@ -211,6 +211,10 @@
                       </tr>
                 </tfoot>
               </table>
+              <div class="hello my-2">
+                Showing {{ $Data->firstItem() }} to {{ $Data->lastItem() }} of {{ $Data->total() }} enteris
+                {{ $Data->links() }}
+              </div>
             </div>
             <!-- /.card-body -->
           </div>
@@ -225,6 +229,8 @@
 
     $(function () {
       $("#cars-table").DataTable({
+        "bInfo" : false,
+        "paging": false,
         "responsive": true, "lengthChange": true, "autoWidth": false,
         "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
           }).buttons().container().appendTo('#cars-table_wrapper .col-md-6:eq(0)');

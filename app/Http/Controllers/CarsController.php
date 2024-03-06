@@ -169,7 +169,7 @@ class CarsController extends Controller
 
         }
         
-        $LastData = $Data->get();
+        $LastData = $Data->paginate(2)->withQueryString();
 
         return view('cars.view' , ["Data" =>$LastData]);
     }

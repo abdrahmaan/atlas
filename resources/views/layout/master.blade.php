@@ -53,6 +53,21 @@ License: For each use you must have a valid license purchased only from above li
   <link rel="stylesheet" href="{{asset('assets/vendors/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
   
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" />
+    @yeild("css")
+    <style>
+              
+        .sidebar .sidebar-body::-webkit-scrollbar {
+          width: 2px; /* width of the scrollbar */
+        }
+
+        .sidebar .sidebar-body::-webkit-scrollbar-track {
+          background: #ffffff; /* color of the track */
+        }
+
+        .sidebar .sidebar-body::-webkit-scrollbar-thumb {
+          background: #6571ff; /* color of the thumb */
+        }
+    </style>
 </head>
 <body>
 	<div class="main-wrapper">

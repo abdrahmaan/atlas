@@ -11,7 +11,7 @@
                 <span></span>
               </div>
             </div>
-            <div class="sidebar-body">
+            <div class="sidebar-body" style="overflow-y:scroll">
               <ul class="nav">
                 <li class="nav-item nav-category">الرئيسية</li>
                 <li class="nav-item" data-url="dashboard">
@@ -79,26 +79,6 @@
                     </ul>
                   </div>
                 </li>
-                <li class="nav-item nav-category">الأعطال الفنية</li>
-                <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="collapse" href="#fix" role="button" aria-expanded="false" aria-controls="emails">
-                    <i class="link-icon" data-feather="cloud-lightning"></i>
-                    <span class="link-title">بلاغات الأعطال</span>
-                    <i class="link-arrow" data-feather="chevron-down"></i>
-                  </a>
-                  <div class="collapse" id="fix">
-                    <ul class="nav sub-menu">
-                      <li class="nav-item">
-                        <a href="pages/email/read.html" class="nav-link">إضافة بلاغ جديد</a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="pages/email/read.html" class="nav-link">بلاغات الأعطال</a>
-                      </li>
-                      
-                      
-                    </ul>
-                  </div>
-                </li>
                 <li class="nav-item nav-category">المشاريع والصيانة</li>
                 <li class="nav-item">
                   <a class="nav-link" data-bs-toggle="collapse" href="#fix3" role="button" aria-expanded="false" aria-controls="emails">
@@ -161,6 +141,28 @@
                     </ul>
                   </div>
                 </li>
+                <li class="nav-item nav-category">الأعطال الفنية</li>
+                <li class="nav-item">
+                  <a class="nav-link" data-bs-toggle="collapse" href="#fix" role="button" aria-expanded="false" aria-controls="emails">
+                    <i class="link-icon" data-feather="cloud-lightning"></i>
+                    <span class="link-title">بلاغات الأعطال</span>
+                    <i class="link-arrow" data-feather="chevron-down"></i>
+                  </a>
+                  <div class="collapse" id="fix">
+                    <ul class="nav sub-menu">
+                      <li class="nav-item">
+                        <a href="pages/email/read.html" class="nav-link">إضافة بلاغ جديد</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="pages/email/read.html" class="nav-link">بلاغات الأعطال</a>
+                      </li>
+                      
+                      
+                    </ul>
+                  </div>
+                </li>     
+                
+                
                 
                 <li class="nav-item nav-category">المبيعات</li>
                 <li class="nav-item" data-url="car">

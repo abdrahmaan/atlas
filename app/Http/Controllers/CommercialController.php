@@ -31,7 +31,8 @@ class CommercialController extends Controller
 
         if (isset($fullName) && $fullName !== null) {
 
-             $Clients->where('fullName', 'like', '%' . $fullName . '%');
+             $Clients->where('fullName', 'like', '%' . $fullName . '%')
+                    ->orWhere('tradeName', 'like', '%' . $fullName . '%');
         }
 
         if (isset($phone) && $phone !== null) {
@@ -49,7 +50,7 @@ class CommercialController extends Controller
 
       $lastData = $Clients->paginate(15)->withQueryString();
 
-      return view("commercial.view" ,[ "Data"=> $lastData] );
+      return view("client.commercial.view" ,[ "Data"=> $lastData] );
     }
 
     /**
@@ -59,7 +60,7 @@ class CommercialController extends Controller
      */
     public function create()
     {
-        return view("commercial.create");
+        return view("client.commercial.create");
     }
 
     /**
@@ -123,7 +124,9 @@ class CommercialController extends Controller
      */
     public function show($id)
     {
-        //
+        $client = Commercial::findOrFail( $id);
+
+        return view("client.profile", ["Data" => $client]);
     }
 
     /**

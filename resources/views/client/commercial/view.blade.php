@@ -40,7 +40,7 @@
                             <div class="col-lg-3 my-1">
                               <div class="form-group  mx-2 d-block">
                                   <label for="fullName" class="text-right w-100 my-1">إسم العميل</label>
-                                  <input name="fullName" type="text" class="form-control text-right" id="exampleInputEmail1" placeholder="إسم العميل">
+                                  <input name="fullName" type="text" class="form-control text-right" id="exampleInputEmail1" placeholder="إسم العميل أو النشاط">
                               </div>
                             </div>
                               <!-- رقم التليفون -->
@@ -121,7 +121,11 @@
                     @foreach ($Data as $row)
                         <tr>
                            <td>{{$row->id}}</td>
-                           <td>{{$row->tradeName}}</td>
+                           <td>
+                            <a  href="/commercial-clients/profile/{{$row->id}}">
+                               {{$row->tradeName}}
+                            </a>
+                          </td>
                            <td>{{$row->fullName}}</td>
                            <td>{{$row->gender}}</td>
                            <td>{{$row->taxNumber}}</td>

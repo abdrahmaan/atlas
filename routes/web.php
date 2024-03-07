@@ -95,7 +95,7 @@ Route::middleware(['auth-user'])->group(function () {
              Route::get('/individual-clients', [IndividualController::class,"index"] );
 
              // Individual Client Profile
-             Route::get('/individual-clients/profile/{id}', [IndividualController::class,"index"] );
+             Route::get('/individual-clients/profile/{id}', [IndividualController::class,"show"] );
              
        // ***************************************************************************
 
@@ -120,7 +120,7 @@ Route::middleware(['auth-user'])->group(function () {
              Route::get('/commercial-clients', [CommercialController::class,"index"] );
 
              // Commercial Client Profile
-             Route::get('/commercial-clients/profile/{id}', [CommercialController::class,"index"] );
+             Route::get('/commercial-clients/profile/{id}', [CommercialController::class,"show"] );
              
        // ***************************************************************************
 

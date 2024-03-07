@@ -120,7 +120,9 @@
                     @foreach ($Data as $row)
                         <tr>
                            <td>{{$row->id}}</td>
-                           <td>{{$row->fullName}}</td>
+                           <td> <a  href="/individual-clients/profile/{{$row->id}}">
+                            {{$row->fullName}}
+                         </a></td>
                            <td>{{$row->gender}}</td>
                            <td>{{$row->phone}}</td>
                            <td>{{$row->phoneTwo}}</td>

@@ -48,7 +48,7 @@ class IndividualController extends Controller
 
       $lastData = $Clients->paginate(15)->withQueryString();
 
-      return view("individual.view" ,[ "Data"=> $lastData] );
+      return view("client.individual.view" ,[ "Data"=> $lastData] );
     }
 
     /**
@@ -58,7 +58,7 @@ class IndividualController extends Controller
      */
     public function create()
     {
-        return view("individual.create");
+        return view("client.individual.create");
     }
 
     /**
@@ -116,7 +116,10 @@ class IndividualController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $client = Individual::findOrFail( $id);
+
+        return view("client.profile", ["Data" => $client]);
     }
 
     /**

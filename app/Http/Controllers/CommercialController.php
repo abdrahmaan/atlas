@@ -19,6 +19,8 @@ class CommercialController extends Controller
         $fullName = $request->fullName;
         $phone = $request->phone;
         $registerNumber = $request->registerNumber;
+        $perPage = $request->perPage ?? 20;
+
 
 
         
@@ -48,7 +50,7 @@ class CommercialController extends Controller
 
 
 
-      $lastData = $Clients->paginate(15)->withQueryString();
+      $lastData = $Clients->paginate($perPage)->withQueryString();
 
       return view("client.commercial.view" ,[ "Data"=> $lastData] );
     }

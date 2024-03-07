@@ -57,6 +57,22 @@
                                     <input name="registerNumber" type="number" class="form-control text-right" id="exampleInputEmail1" placeholder=" السجل التجارى">
                                 </div>
                               </div>
+                              
+                              <!-- رقم السجل -->
+                              <div class="col-lg-3 my-1">
+                                <div class="form-group  mx-2 d-block">
+                                  <label for="perPage" class="text-right w-100 my-1">عدد النتائج/الصفحة</label>
+                                  <select class="form-control" name="perPage" id="">
+                                      <option value="10">10</option>
+                                      <option value="20">20</option>
+                                      <option value="30">30</option>
+                                      <option value="50">50</option>
+                                      <option value="100">100</option>
+                                      <option value="1000">1000</option>
+                                  </select>
+                                </div>
+                              </div>
+                              
 
   
                            

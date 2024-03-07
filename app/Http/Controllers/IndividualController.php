@@ -18,6 +18,7 @@ class IndividualController extends Controller
         $fullName = $request->fullName;
         $phone = $request->phone;
         $national_id = $request->national_id;
+        $perPage = $request->perPage ?? 20;
 
 
         
@@ -46,7 +47,7 @@ class IndividualController extends Controller
 
 
 
-      $lastData = $Clients->paginate(15)->withQueryString();
+      $lastData = $Clients->paginate($perPage)->withQueryString();
 
       return view("client.individual.view" ,[ "Data"=> $lastData] );
     }

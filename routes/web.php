@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CarsController;
+use App\Http\Controllers\IndividualController;
+use App\Http\Controllers\CommercialController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UsersController;
 
@@ -71,6 +73,57 @@ Route::middleware(['auth-user'])->group(function () {
     
        // ***************************************************************************
     
+
+       // Individual Client
+
+             // New Individual Client 
+             Route::get('/new-individual-client', [IndividualController::class,"create"]);
+    
+             // New Individual Client - Store
+             Route::post('/new-individual-client', [IndividualController::class,"store"]);
+      
+             // Edit Individual Client 
+             Route::get('/edit-individual-client/{id}', [IndividualController::class,"edit"]);
+      
+             // Edit Individual Client - Update
+             Route::post('/edit-individual-client/{id}', [IndividualController::class,"update"]);
+      
+             // Individual Client Car 
+             Route::get('/delete-individual-client/{id}', [IndividualController::class,"destroy"]);        
+      
+             // All Individual Client View
+             Route::get('/individual-clients', [IndividualController::class,"index"] );
+
+             // Individual Client Profile
+             Route::get('/individual-clients/profile/{id}', [IndividualController::class,"index"] );
+             
+       // ***************************************************************************
+
+       // Commercial Client
+
+             // New Commercial Client 
+             Route::get('/new-commercial-client', [CommercialController::class,"create"]);
+    
+             // New Commercial Client - Store
+             Route::post('/new-commercial-client', [CommercialController::class,"store"]);
+      
+             // Edit Commercial Client 
+             Route::get('/edit-commercial-client/{id}', [CommercialController::class,"edit"]);
+      
+             // Edit Commercial Client - Update
+             Route::post('/edit-commercial-client/{id}', [CommercialController::class,"update"]);
+      
+             // Commercial Client Car 
+             Route::get('/delete-commercial-client/{id}', [CommercialController::class,"destroy"]);        
+      
+             // All Commercial Client View
+             Route::get('/commercial-clients', [CommercialController::class,"index"] );
+
+             // Commercial Client Profile
+             Route::get('/commercial-clients/profile/{id}', [CommercialController::class,"index"] );
+             
+       // ***************************************************************************
+
        // Users
     
            // New User 

@@ -1,0 +1,38 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Individual;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Individual>
+ */
+class IndividualFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+
+     protected $model = Individual::class;
+
+    public function definition()
+    {
+
+        
+        return [
+            "fullName"  => $this->faker->name(),
+            "gender"  => "Male",
+            "phone"  => $this->faker->phoneNumber(),
+            "phoneTwo"  => $this->faker->phoneNumber(),
+            "address"  => $this->faker->streetAddress(),
+            "district"  => $this->faker->randomElement(["الخبر","المدينة"]),
+            "city"  => $this->faker->randomElement(["الرياض","جدة"]),
+            "postalCode"  => $this->faker->randomNumber(7),
+            "national_id"  => $this->faker->randomNumber(7),
+            "dateOfBirth" => $this->faker->date(),
+        ];
+    }
+}

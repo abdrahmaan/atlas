@@ -21,7 +21,7 @@
                   </a>
                 </li>
                 <li class="nav-item nav-category"> العملاء</li>
-                <li class="nav-item">
+                <li class="nav-item"  data-url="individual">
                   <a class="nav-link" data-bs-toggle="collapse" href="#client-personal" role="button" aria-expanded="false" aria-controls="emails">
                     <i class="link-icon" data-feather="users"></i>
                     <span class="link-title">العميل الفردى</span>
@@ -30,15 +30,15 @@
                   <div class="collapse" id="client-personal">
                     <ul class="nav sub-menu">
                       <li class="nav-item">
-                        <a href="pages/email/inbox.html" class="nav-link">إضافة عميل فردى</a>
+                        <a href="/new-individual-client" class="nav-link">إضافة عميل فردى</a>
                       </li>
                       <li class="nav-item">
-                        <a href="pages/email/read.html" class="nav-link"> العملاء الفرديين</a>
+                        <a href="/individual-clients" class="nav-link"> العملاء الفرديين</a>
                       </li>
                     </ul>
                   </div>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-url="commercial">
                   <a class="nav-link" data-bs-toggle="collapse" href="#driver" role="button" aria-expanded="false" aria-controls="emails">
                     <i class="link-icon" data-feather="users"></i>
                     <span class="link-title">العميل التجارى</span>
@@ -47,10 +47,10 @@
                   <div class="collapse" id="driver">
                     <ul class="nav sub-menu">
                       <li class="nav-item">
-                        <a href="pages/email/inbox.html" class="nav-link">إضافة عميل تجارى</a>
+                        <a href="/new-commercial-client" class="nav-link">إضافة عميل تجارى</a>
                       </li>
                       <li class="nav-item">
-                        <a href="pages/email/read.html" class="nav-link"> العملاء التجاريين</a>
+                        <a href="/commercial-clients" class="nav-link"> العملاء التجاريين</a>
                       </li>
                     </ul>
                   </div>
@@ -58,7 +58,7 @@
                 <li class="nav-item">
                   <a class="nav-link" data-bs-toggle="collapse" href="#road" role="button" aria-expanded="false" aria-controls="emails">
                     <i class="link-icon" data-feather="git-merge"></i>
-                    <span class="link-title">عمليات</span>
+                    <span class="link-title">معاملات العملاء</span>
                     <i class="link-arrow" data-feather="chevron-down"></i>
                   </a>
                   <div class="collapse" id="road">
@@ -116,11 +116,15 @@
                       <li class="nav-item">
                         <a href="pages/email/read.html" class="nav-link">تقارير الصيانة</a>
                       </li>
+                      <li class="nav-item">
+                        <a href="pages/email/read.html" class="nav-link">أوردرات الصيانة</a>
+                      </li>
                       
                       
                     </ul>
                   </div>
                 </li>
+              
                 <li class="nav-item nav-category">عروض الأسعار</li>
                 <li class="nav-item">
                   <a class="nav-link" data-bs-toggle="collapse" href="#price-list" role="button" aria-expanded="false" aria-controls="emails">
@@ -131,10 +135,13 @@
                   <div class="collapse" id="price-list">
                     <ul class="nav sub-menu">
                       <li class="nav-item">
-                        <a href="pages/email/read.html" class="nav-link">عقود توريد مصعد</a>
+                        <a href="pages/email/read.html" class="nav-link">عروض توريد مصعد</a>
                       </li>
                       <li class="nav-item">
-                        <a href="pages/email/read.html" class="nav-link"> عقود تحديث مصعد</a>
+                        <a href="pages/email/read.html" class="nav-link"> عروض تحديث مصعد</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="pages/email/read.html" class="nav-link"> عروض أسعار صيانة</a>
                       </li>
                      
                       
@@ -206,8 +213,8 @@
                 <li class="nav-item nav-category">الإعدادات</li>
                 <li class="nav-item" data-url="car">
                   <a class="nav-link" data-bs-toggle="collapse" href="#sett" role="button" aria-expanded="false" aria-controls="emails">
-                    <i class="link-icon" data-feather="aperture"></i>
-                    <span class="link-title"> إدارة المبيعات</span>
+                    <i class="link-icon" data-feather="settings"></i>
+                    <span class="link-title"> إعدادات البرنامج</span>
                     <i class="link-arrow" data-feather="chevron-down"></i>
                   </a>
                   <div class="collapse" id="sett">

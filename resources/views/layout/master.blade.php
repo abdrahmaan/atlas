@@ -53,7 +53,7 @@ License: For each use you must have a valid license purchased only from above li
   <link rel="stylesheet" href="{{asset('assets/vendors/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
   
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" />
-    @yeild("css")
+    
     <style>
               
         .sidebar .sidebar-body::-webkit-scrollbar {
@@ -68,6 +68,8 @@ License: For each use you must have a valid license purchased only from above li
           background: #6571ff; /* color of the thumb */
         }
     </style>
+
+  @yield('css')
 </head>
 <body>
 	<div class="main-wrapper">

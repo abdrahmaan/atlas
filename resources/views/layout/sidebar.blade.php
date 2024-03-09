@@ -73,7 +73,7 @@
                         <a href="/appointments" class="nav-link">مواعيد العملاء</a>
                       </li>
                       <li class="nav-item">
-                        <a href="pages/email/read.html" class="nav-link">خطابات العملاء</a>
+                        <a href="/letters" class="nav-link">خطابات العملاء</a>
                       </li>
                       
                     </ul>

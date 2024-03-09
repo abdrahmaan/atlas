@@ -8,6 +8,7 @@ use App\Http\Controllers\CommercialController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\LetterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -147,6 +148,20 @@ Route::middleware(['auth-user'])->group(function () {
 
           
 
+       // ***************************************************************************
+
+
+       // Letters
+
+           // New Letter  
+           Route::get('/new-letter/{id}', [LetterController::class,"create"]);
+    
+           // New Letter - Store
+           Route::post('/save-letter', [LetterController::class,"store"]);
+     
+           // All Letters 
+           Route::get('/letters', [LetterController::class,"index"] );
+          
        // ***************************************************************************
 
        // Users

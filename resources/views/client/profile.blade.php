@@ -80,7 +80,7 @@
                               <a class="dropdown-item" href="/new-appointment/{{$Data->id}}">إنشاء موعد جديد</a>
                               <a class="dropdown-item" href="#">إنشاء مطالبة مالية</a>
                               <a class="dropdown-item" href="#">إنشاء دفعة مالية</a>
-                              <a class="dropdown-item" href="#">إنشاء خطاب للعميل</a>
+                              <a class="dropdown-item" href="/new-letter/{{$Data->id}}">إنشاء خطاب للعميل</a>
                             </div>
                           </div>
                     </li>

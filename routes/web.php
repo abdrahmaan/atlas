@@ -97,6 +97,7 @@ Route::middleware(['auth-user'])->group(function () {
 
              // Individual Client Profile
              Route::get('/individual-clients/profile/{id}', [IndividualController::class,"show"] );
+             Route::get('/profile/{id}', [IndividualController::class,"show"] );
              
        // ***************************************************************************
 
@@ -132,7 +133,7 @@ Route::middleware(['auth-user'])->group(function () {
            Route::get('/new-appointment/{id}', [AppointmentController::class,"create"]);
     
            // New Appointment - Store
-           Route::post('/new-appointment/{client-id}', [AppointmentController::class,"store"]);
+           Route::post('/save-appointment', [AppointmentController::class,"store"]);
      
            // All Appointments 
            Route::get('/appointments', [AppointmentController::class,"index"] );
@@ -141,7 +142,7 @@ Route::middleware(['auth-user'])->group(function () {
            Route::get('/appointment-edit/{id}', [AppointmentController::class,"edit"] );
 
            // Appointment Edit - Store
-           Route::post('/appointment-edit/{id}', [AppointmentController::class,"update"] );
+           Route::post('/appointment-edit', [AppointmentController::class,"update"] );
 
 
           

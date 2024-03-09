@@ -4,8 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Database\Factories\ClientOneFactory;
-use Database\Factories\ClientTwoFactory;
+use App\Models\Appointment;
 
 class Client extends Model
 {
@@ -32,4 +31,16 @@ class Client extends Model
         "taxNumber" ,
         "registerNumber",
     ];
+
+
+        /**
+         * Get all of the comments for the Client
+         *
+         * @return \Illuminate\Database\Eloquent\Relations\HasMany
+         */
+        public function appointments()
+        {
+            return $this->hasMany(Appointment::class, 'client_id', 'id');
+        }
+    
 }

@@ -1,18 +1,18 @@
 @extends('layout.master')
-@section('title',"إضافة موعد لعميل")
+@section('title',"تعديل حالة موعد")
     
 
 @section('content')
 
 <div>
-    <h4 class="mb-4">إضافة موعد لعميل</h4>
+    <h4 class="mb-4">تعديل حالة موعد</h4>
 </div>
 
 <div class="row">
 
         
     <div class="col-12">
-        <form id="new-car" action="/save-appointment" method="POST">
+        <form id="new-car" action="/appointment-edit" method="POST">
             @csrf
                 <!-- بيانات العميل -->
             <div class="card my-3">
@@ -30,9 +30,10 @@
                         
 
                             <!-- ID  -->
-                                            <input name="client_id" value="{{$Data->id}}" hidden type="text" class="form-control text-right" id="exampleInputEmail1" placeholder="الإسم ثلاثى">
-                            <!-- الإسم ثلاثى  -->
-                                <div class="col-lg-4 my-1">
+                            <input name="id" value="{{$Data->id}}" hidden type="text" class="form-control text-right" id="exampleInputEmail1" placeholder="الإسم ثلاثى">
+         
+                                      <!-- الإسم ثلاثى  -->
+                                      <div class="col-lg-4 my-1">
                                         <div class="form-group  mx-2 d-block">
                                             <label for="fullName" class="text-right w-100 my-1">الإسم ثلاثى</label>
                                             <input name="fullName" readonly value="{{$Data->fullName}}" type="text" class="form-control text-right" id="exampleInputEmail1" placeholder="الإسم ثلاثى">
@@ -66,7 +67,7 @@
                                 <div class="form-group mx-2 d-block">
                                     <label for="district" class="text-right w-100 my-1">الحي</label>
                                     <select name="district" class="form-control text-right" style="min-width: 121px">
-                                        <option value="الخبر">الخبر</option>
+                                        <option value="{{$Data->district}}">{{$Data->district}}</option>
                                         
                                     </select>
                                 </div>
@@ -76,15 +77,28 @@
                                 <div class="form-group mx-2 d-block">
                                     <label for="city" class="text-right w-100 my-1">المدينة</label>
                                     <select name="city" class="form-control text-right" style="min-width: 121px">
-                                        <option value="الرياض">الرياض</option>
+                                        <option value="{{$Data->city}}">{{$Data->city}}</option>
                                         
                                     </select>
                                 </div>
                             </div>
 
-                        
+                            <!-- الحالة -->
+                            <div class="col-lg-3 my-1">
+                                <div class="form-group  mx-2 d-block">
+                                    <label for="status" class="text-right w-100 my-1">حالة الموعد</label>
+                                    <select class="form-control" name="status" id="">
+                                        <option value="سارى">سارى</option>
+                                        <option value="مؤجل">مؤجل</option>
+                                        <option value="مكتمل">مكتمل</option>
+                                        <option value="ملغى">ملغى</option>
+                                      
+                                    </select>
+                                  </div>
+                              </div>
+
                              <!--  التاريخ -->
-                             <div class="col-lg-4 my-1">
+                             <div class="col-lg-3 my-1">
                                 <div class="form-group  mx-2 d-block">
                                     <label for="dateOfAppointment" class="text-right w-100 my-1">تاريخ الموعد</label>
                                     <input name="dateOfAppointment" type="date" class="form-control text-right" id="exampleInputEmail1" placeholder="تاريخ الميلاد">
@@ -92,7 +106,7 @@
                             </div>
 
                              <!--  اليوم -->
-                             <div class="col-lg-4 my-1">
+                             <div class="col-lg-3 my-1">
                                 <div class="form-group  mx-2 d-block">
                                     <label for="dayOfAppointment" class="text-right w-100 my-1">يوم الموعد</label>
                                     <select name="dayOfAppointment" class="form-control text-right" style="min-width: 121px">
@@ -109,17 +123,18 @@
                             </div>
 
                              <!--  الموعد -->
-                             <div class="col-lg-4 my-1">
+                             <div class="col-lg-3 my-1">
                                 <div class="form-group  mx-2 d-block">
                                     <label for="timeOfAppointment" class="text-right w-100 my-1">الساعة</label>
                                     <input name="timeOfAppointment" type="time" class="form-control text-right" id="exampleInputEmail1" placeholder="تاريخ الميلاد">
                                 </div>
                             </div>
-                            <!--  سبب الموعد -->
+                            
+                            <!--  ملاحظات -->
                             <div class="col-12 my-1">
                                 <div class="form-group  mx-2 d-block">
-                                    <label for="reason" class="text-right w-100 my-1">سبب الموعد</label>
-                                <textarea name="reason" id="" class="form-control text-right" cols="30" rows="6"></textarea>
+                                    <label for="op_description" class="text-right w-100 my-1">ملاحظات</label>
+                                <textarea name="op_description" id="" class="form-control text-right" cols="30" rows="6"></textarea>
                                     </div>
                             </div>
 
@@ -131,7 +146,7 @@
     
                     <div class="card-footer text-right">
                         <div class="d-flex justify-content-between align-items-center flex-row-reverse">
-                            <button  type="submit" class="btn btn-success">تسجيل البيانات</button>
+                            <button  type="submit" class="btn btn-success">تعديل البيانات</button>
                             بيانات خاصة بتحديد موعد مع العميل 
     
                         </div>
@@ -182,7 +197,7 @@
                 timeOfAppointment: {
                     required: true
                 },
-                reason: {
+                op_description: {
                     required: true
                 },
               
@@ -215,8 +230,8 @@
                 timeOfAppointment: {
                     required: "ساعة الموعد مطلوبة"
                 },
-                reason: {
-                    required: "سبب الموعد مطلوب"
+                op_description: {
+                    required: "ملاحظات الموعد مطلوبة"
                 },
             },
             errorElement: 'span',

@@ -120,7 +120,11 @@ class IndividualController extends Controller
     public function show($id)
     {
 
-        $client = Client::findOrFail( $id);
+        $client = Client::findOrFail($id);
+
+        // Appointmens
+        $client->appointments;
+
 
         return view("client.profile", ["Data" => $client]);
     }

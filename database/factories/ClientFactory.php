@@ -22,33 +22,33 @@ class ClientFactory extends Factory
      public function definition()
      {
 
-        // return [
-        //     "client_type"  => "individual",
-        //     "fullName"  => $this->faker->name(),
-        //     "gender"  => "Male",
-        //     "phone"  => $this->faker->phoneNumber(),
-        //     "phoneTwo"  => $this->faker->phoneNumber(),
-        //     "address"  => $this->faker->streetAddress(),
-        //     "district"  => $this->faker->randomElement(["الخبر","المدينة"]),
-        //     "city"  => $this->faker->randomElement(["الرياض","جدة"]),
-        //     "postalCode"  => $this->faker->randomNumber(7),
-        //     "national_id"  => $this->faker->randomNumber(7),
-        //     "dateOfBirth" => $this->faker->date(),
-        // ];
+            return [
+                "client_type"  => "individual",
+                "fullName"  => $this->faker->name(),
+                "gender"  => "Male",
+                "phone"  => $this->faker->phoneNumber(),
+                "phoneTwo"  => $this->faker->phoneNumber(),
+                "address"  => $this->faker->streetAddress(),
+                "district"  => $this->faker->randomElement(["الخبر","المدينة"]),
+                "city"  => $this->faker->randomElement(["الرياض","جدة"]),
+                "postalCode"  => $this->faker->randomNumber(7),
+                "national_id"  => $this->faker->randomNumber(7),
+                "dateOfBirth" => $this->faker->date(),
+            ];
  
-         return [
-             "client_type"  => "commercial",
-             "tradeName"  => $this->faker->company(),
-             "fullName"  => $this->faker->name(),
-             "gender"  => "Male",
-             "taxNumber"  => $this->faker->randomNumber(7),
-             "registerNumber"  => $this->faker->randomNumber(7),
-             "phone"  => $this->faker->phoneNumber(),
-             "phoneTwo"  => $this->faker->phoneNumber(),
-             "address"  => $this->faker->streetAddress(),
-             "district"  => $this->faker->randomElement(["الخبر","المدينة"]),
-             "city"  => $this->faker->randomElement(["الرياض","جدة"]),
-             "postalCode"  => $this->faker->randomNumber(6),
-         ];
+        //  return [
+        //      "client_type"  => "commercial",
+        //      "tradeName"  => $this->faker->company(),
+        //      "fullName"  => $this->faker->name(),
+        //      "gender"  => "Male",
+        //      "taxNumber"  => $this->faker->randomNumber(7),
+        //      "registerNumber"  => $this->faker->randomNumber(7),
+        //      "phone"  => $this->faker->phoneNumber(),
+        //      "phoneTwo"  => $this->faker->phoneNumber(),
+        //      "address"  => $this->faker->streetAddress(),
+        //      "district"  => $this->faker->randomElement(["الخبر","المدينة"]),
+        //      "city"  => $this->faker->randomElement(["الرياض","جدة"]),
+        //      "postalCode"  => $this->faker->randomNumber(6),
+        //  ];
      }
 }

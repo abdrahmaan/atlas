@@ -53,6 +53,8 @@ License: For each use you must have a valid license purchased only from above li
   <link rel="stylesheet" href="{{asset('assets/vendors/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
   
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" />
+    {{-- Sweet Alert CSS --}}
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/dist/sweetalert2.min.css" rel="stylesheet">
     
     <style>
               
@@ -403,6 +405,8 @@ License: For each use you must have a valid license purchased only from above li
 <script src="{{asset('assets/vendors/datatables-buttons/js/buttons.html5.min.js')}}"></script>
 <script src="{{asset('assets/vendors/datatables-buttons/js/buttons.print.min.js')}}"></script>
 <script src="{{asset('assets/vendors/datatables-buttons/js/buttons.colVis.min.js')}}"></script>
+{{-- Sweet Alert JS --}}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.6/dist/sweetalert2.all.min.js"></script>
 	<!-- Custom js for this page -->
   <script src="{{asset('assets/js/dashboard-light.js')}}"></script>
 	<!-- End custom js for this page -->

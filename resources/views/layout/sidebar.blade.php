@@ -55,7 +55,7 @@
                     </ul>
                   </div>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" data-url="appointment">
                   <a class="nav-link" data-bs-toggle="collapse" href="#road" role="button" aria-expanded="false" aria-controls="emails">
                     <i class="link-icon" data-feather="git-merge"></i>
                     <span class="link-title">معاملات العملاء</span>
@@ -70,7 +70,7 @@
                         <a href="pages/email/read.html" class="nav-link">دفعات العملاء</a>
                       </li>
                       <li class="nav-item">
-                        <a href="pages/email/inbox.html" class="nav-link">مواعيد العملاء</a>
+                        <a href="/appointments" class="nav-link">مواعيد العملاء</a>
                       </li>
                       <li class="nav-item">
                         <a href="pages/email/read.html" class="nav-link">خطابات العملاء</a>

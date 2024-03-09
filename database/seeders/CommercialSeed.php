@@ -4,8 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Commercial;
+use Database\Factories\CommercialFactory;
 
+use App\Models\Client;
 
 class CommercialSeed extends Seeder
 {
@@ -16,6 +17,6 @@ class CommercialSeed extends Seeder
      */
     public function run()
     {
-        Commercial::factory()->count(50)->create();
+        Client::factory(CommercialFactory::class)->count(7)->create();
     }
 }

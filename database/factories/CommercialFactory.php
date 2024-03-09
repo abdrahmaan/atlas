@@ -3,11 +3,9 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use App\Models\Commercial;
-
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Commercial>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
 class CommercialFactory extends Factory
 {
@@ -16,25 +14,20 @@ class CommercialFactory extends Factory
      *
      * @return array<string, mixed>
      */
-
-     protected $model = Commercial::class;
-
-     public function definition()
-     {
- 
-         
-         return [
-             "tradeName"  => $this->faker->company(),
-             "fullName"  => $this->faker->name(),
-             "gender"  => "Male",
-             "taxNumber"  => $this->faker->randomNumber(7),
-             "registerNumber"  => $this->faker->randomNumber(7),
-             "phone"  => $this->faker->phoneNumber(),
-             "phoneTwo"  => $this->faker->phoneNumber(),
-             "address"  => $this->faker->streetAddress(),
-             "district"  => $this->faker->randomElement(["الخبر","المدينة"]),
-             "city"  => $this->faker->randomElement(["الرياض","جدة"]),
-             "postalCode"  => $this->faker->randomNumber(6),
-         ];
-     }
+    public function definition()
+    {
+        return [
+            "client_type"  => "individual",
+            "fullName"  => $this->faker->name(),
+            "gender"  => "Male",
+            "phone"  => $this->faker->phoneNumber(),
+            "phoneTwo"  => $this->faker->phoneNumber(),
+            "address"  => $this->faker->streetAddress(),
+            "district"  => $this->faker->randomElement(["الخبر","المدينة"]),
+            "city"  => $this->faker->randomElement(["الرياض","جدة"]),
+            "postalCode"  => $this->faker->randomNumber(7),
+            "national_id"  => $this->faker->randomNumber(7),
+            "dateOfBirth" => $this->faker->date(),
+        ];
+    }
 }

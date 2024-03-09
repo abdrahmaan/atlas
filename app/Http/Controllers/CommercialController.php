@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Commercial;
+use App\Models\Client;
 
 
 class CommercialController extends Controller
@@ -24,7 +24,7 @@ class CommercialController extends Controller
 
 
         
-        $Clients = Commercial::query();
+        $Clients = Client::query();
         
         
         if (isset($id) && $id !== null) {
@@ -48,9 +48,7 @@ class CommercialController extends Controller
              $Clients->where('registerNumber', 'like', '%' . $registerNumber . '%');
         }
 
-
-
-      $lastData = $Clients->paginate($perPage)->withQueryString();
+      $lastData = $Clients->where("client_type","commercial")->paginate($perPage)->withQueryString();
 
       return view("client.commercial.view" ,[ "Data"=> $lastData] );
     }
@@ -74,6 +72,7 @@ class CommercialController extends Controller
     public function store(Request $request)
     {
 
+        $request["client_type"] = 'commercial';
         
         $request->validate([
             "tradeName" => "required",
@@ -101,7 +100,7 @@ class CommercialController extends Controller
             "postalCode.required" => "الرمز البريدي مطلوب",
         ]);
 
-        $insert =  Commercial::create($request->all());
+        $insert =  Client::create($request->all());
 
        if ($insert) {
 
@@ -126,7 +125,7 @@ class CommercialController extends Controller
      */
     public function show($id)
     {
-        $client = Commercial::findOrFail( $id);
+        $client = Client::findOrFail( $id);
 
         return view("client.profile", ["Data" => $client]);
     }

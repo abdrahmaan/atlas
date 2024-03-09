@@ -7,6 +7,7 @@ use App\Http\Controllers\IndividualController;
 use App\Http\Controllers\CommercialController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\AppointmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -122,6 +123,29 @@ Route::middleware(['auth-user'])->group(function () {
              // Commercial Client Profile
              Route::get('/commercial-clients/profile/{id}', [CommercialController::class,"show"] );
              
+       // ***************************************************************************
+
+
+       // Appointments
+
+           // New Appointment  
+           Route::get('/new-appointment/{id}', [AppointmentController::class,"create"]);
+    
+           // New Appointment - Store
+           Route::post('/new-appointment/{client-id}', [AppointmentController::class,"store"]);
+     
+           // All Appointments 
+           Route::get('/appointments', [AppointmentController::class,"index"] );
+
+           // Appointment Edit - View
+           Route::get('/appointment-edit/{id}', [AppointmentController::class,"edit"] );
+
+           // Appointment Edit - Store
+           Route::post('/appointment-edit/{id}', [AppointmentController::class,"update"] );
+
+
+          
+
        // ***************************************************************************
 
        // Users

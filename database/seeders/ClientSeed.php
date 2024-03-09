@@ -4,9 +4,13 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use App\Models\Individual;
+use Database\Factories\ClientFactory;
+use Database\Factories\ClientOneFactory;
+use App\Models\Client;
 
-class IndividualSeed extends Seeder
+
+
+class ClientSeed extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +19,7 @@ class IndividualSeed extends Seeder
      */
     public function run()
     {
-        Individual::factory()->count(50)->create();
+        Client::factory()->count(100)->create();
+
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Individual;
+use App\Models\Client;
 class IndividualController extends Controller
 {
     /**
@@ -22,7 +22,7 @@ class IndividualController extends Controller
 
 
         
-        $Clients = Individual::query();
+        $Clients = Client::query();
         
         
         if (isset($id) && $id !== null) {
@@ -47,7 +47,7 @@ class IndividualController extends Controller
 
 
 
-      $lastData = $Clients->paginate($perPage)->withQueryString();
+      $lastData = $Clients->where("client_type","individual")->paginate($perPage)->withQueryString();
 
       return view("client.individual.view" ,[ "Data"=> $lastData] );
     }
@@ -71,6 +71,8 @@ class IndividualController extends Controller
     public function store(Request $request)
     {
 
+        $request["client_type"] = 'individual';
+
         $request->validate([
             "fullName" => "required",
             "gender" => "required",
@@ -93,7 +95,7 @@ class IndividualController extends Controller
             "dateOfBirth.required" => "تاريخ الميلاد مطلوب",
         ]);
 
-       $insert =  Individual::create($request->all());
+       $insert =  Client::create($request->all());
 
        if ($insert) {
 
@@ -118,7 +120,7 @@ class IndividualController extends Controller
     public function show($id)
     {
 
-        $client = Individual::findOrFail( $id);
+        $client = Client::findOrFail( $id);
 
         return view("client.profile", ["Data" => $client]);
     }

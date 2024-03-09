@@ -78,9 +78,9 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                               <a class="dropdown-item" href="/new-appointment/{{$Data->id}}">إنشاء موعد جديد</a>
-                              <a class="dropdown-item" href="#">إنشاء مطالبة مالية</a>
-                              <a class="dropdown-item" href="#">إنشاء دفعة مالية</a>
                               <a class="dropdown-item" href="/new-letter/{{$Data->id}}">إنشاء خطاب للعميل</a>
+                              <a class="dropdown-item" href="/new-financial-request/{{$Data->id}}">إنشاء مطالبة مالية</a>
+                              <a class="dropdown-item" href="#">إنشاء دفعة مالية</a>
                             </div>
                           </div>
                     </li>

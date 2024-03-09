@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\LetterController;
+use App\Http\Controllers\FinancialController;
 
 /*
 |--------------------------------------------------------------------------
@@ -161,6 +162,19 @@ Route::middleware(['auth-user'])->group(function () {
      
            // All Letters 
            Route::get('/letters', [LetterController::class,"index"] );
+          
+       // ***************************************************************************
+
+       // Financial Request
+
+           // New Financial  
+           Route::get('/new-financial-request/{id}', [FinancialController::class,"create"]);
+    
+           // New Financial - Store
+           Route::post('/save-financial-request', [FinancialController::class,"store"]);
+     
+           // All Financial 
+           Route::get('/financial-requests', [FinancialController::class,"index"] );
           
        // ***************************************************************************
 

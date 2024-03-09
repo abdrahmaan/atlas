@@ -6,15 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Appointment;
 use App\Models\Letter;
+use App\Models\FinancialRequest;
 
 class Client extends Model
 {
     use HasFactory;
 
-    protected $factory = [
-        'ClientOneFactory' => ClientOneFactory::class,
-        'ClientTwoFactory' => ClientTwoFactory::class,
-    ];
 
     protected $fillable = [
         "client_type",
@@ -34,24 +31,21 @@ class Client extends Model
     ];
 
 
-        /**
-         * Get all of the comments for the Client
-         *
-         * @return \Illuminate\Database\Eloquent\Relations\HasMany
-         */
+
         public function appointments()
         {
             return $this->hasMany(Appointment::class, 'client_id', 'id');
         }
 
-        /**
-         * Get all of the comments for the Client
-         *
-         * @return \Illuminate\Database\Eloquent\Relations\HasMany
-         */
+
         public function letters()
         {
             return $this->hasMany(Letter::class, 'client_id', 'id');
+        }
+
+        public function financial()
+        {
+            return $this->hasMany(FinancialRequest::class, 'client_id', 'id');
         }
     
 }

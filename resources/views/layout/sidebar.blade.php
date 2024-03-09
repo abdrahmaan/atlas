@@ -64,17 +64,18 @@
                   <div class="collapse" id="road">
                     <ul class="nav sub-menu">
                       <li class="nav-item">
-                        <a href="pages/email/read.html" class="nav-link">المطالبات المالية</a>
-                      </li>
-                      <li class="nav-item">
-                        <a href="pages/email/read.html" class="nav-link">دفعات العملاء</a>
-                      </li>
-                      <li class="nav-item">
                         <a href="/appointments" class="nav-link">مواعيد العملاء</a>
                       </li>
                       <li class="nav-item">
                         <a href="/letters" class="nav-link">خطابات العملاء</a>
                       </li>
+                      <li class="nav-item">
+                        <a href="/financial-requests" class="nav-link">المطالبات المالية</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="pages/email/read.html" class="nav-link">دفعات العملاء</a>
+                      </li>
+                      
                       
                     </ul>
                   </div>

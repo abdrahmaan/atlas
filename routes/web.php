@@ -178,6 +178,10 @@ Route::middleware(['auth-user'])->group(function () {
           
        // ***************************************************************************
 
+       // Email View
+
+       Route::get('/email', [AppointmentController::class,"email"] );
+
        // Users
     
            // New User 

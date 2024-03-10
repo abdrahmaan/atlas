@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Models\Letter;
+use Mail;
+use App\Mail\LetterMail;
 
 
 class LetterController extends Controller
@@ -81,22 +83,33 @@ class LetterController extends Controller
             "letter_description.required" => "بيانات الخطاب مطلوب",
         ]);
 
-        $request["op"] = session()->get("user-data")["name"];
 
-        $insert = Letter::create($request->all());
+        $message_data = [
+            "title" => "خطاب رسمى",
+            "name" => $request->fullName,
+            "message" => $request->letter_description,
+        ];
 
-        if ($insert) {
+       $email = Mail::to("xmbedo@gmail.com")->send(new LetterMail($message_data));
 
-            session()->flash("message","تم إرسال الخطاب بنجاح");
-            return redirect()->back();
+        if ($email) {
+            $request["op"] = session()->get("user-data")["name"];
 
-        } else {
+            $insert = Letter::create($request->all());
 
-            session()->flash("error","يوجد مشكلة فى إرسال الخطاب للعميل");
-            return redirect()->back();
+            if ($insert) {
+
+                session()->flash("message","تم إرسال الخطاب بنجاح");
+                return redirect()->back();
+
+            } else {
+
+                session()->flash("error","يوجد مشكلة فى إرسال الخطاب للعميل");
+                return redirect()->back();
+
+            }
 
         }
-
     }
 
     /**

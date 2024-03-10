@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Mail;
+use App\Mail\LetterMail;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Models\FinancialRequest;
@@ -105,20 +107,30 @@ class FinancialController extends Controller
             "dateOfPay.required" => "تاريخ السداد مطلوب",
         ]);
 
-        $insert = FinancialRequest::create($request->all());
+        $message_data = [
+            "title" => "مطالبة مالية",
+            "name" => $request->fullName,
+            "message" => "عميلنا العزيز نأمل منكم سداد دفعة $request->amount وقيمتها $request->amount_letters وذلك حسب العقد رقم $request->contract_id ولكم جزيل الشكر",
 
-        
-        if ($insert) {
+        ];
 
-            session()->flash("message","تم إرسال المطالبة المالية بنجاح");
-            return redirect()->back();
+       $email = Mail::to("xmbedo@gmail.com")->send(new LetterMail($message_data));
+       
+       
+       if ($email) {
+           $insert = FinancialRequest::create($request->all());
+            if ($insert) {
 
-        } else {
+                session()->flash("message","تم إرسال المطالبة المالية بنجاح");
+                return redirect()->back();
 
-            session()->flash("error","يوجد مشكلة فى إرسال المطالبة المالية للعميل");
-            return redirect()->back();
+            } else {
 
-        }
+                session()->flash("error","يوجد مشكلة فى إرسال المطالبة المالية للعميل");
+                return redirect()->back();
+
+            }
+       }
 
     }
 

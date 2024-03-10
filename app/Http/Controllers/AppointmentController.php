@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Models\Appointment;
+use Mail;
+use App\Mail\LetterMail;
 
 
 class AppointmentController extends Controller
@@ -71,6 +73,7 @@ class AppointmentController extends Controller
      */
     public function create(Request $request)
     {
+    
         $client_id = $request->id;
 
         $client = Client::findOrFail($client_id);
@@ -78,6 +81,10 @@ class AppointmentController extends Controller
         return view("appointment.create" ,["Data" => $client]);
     }
 
+
+    public function email() {
+        return view("emails.letter");
+    }
     /**
      * Store a newly created resource in storage.
      *

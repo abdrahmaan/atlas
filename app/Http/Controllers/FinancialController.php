@@ -114,7 +114,9 @@ class FinancialController extends Controller
 
         ];
 
-       $email = Mail::to("xmbedo@gmail.com")->send(new LetterMail($message_data));
+       $client_email = Client::where("id",$request->client_id)->get()->first()->email;
+
+       $email = Mail::to($client_email)->send(new LetterMail($message_data));
        
        
        if ($email) {

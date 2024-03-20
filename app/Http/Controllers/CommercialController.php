@@ -26,7 +26,8 @@ class CommercialController extends Controller
         
         $Clients = Client::query();
         
-        
+        $Clients->where("client_type","commercial");
+
         if (isset($id) && $id !== null) {
              $Clients->where("id",$id);
         }
@@ -35,6 +36,7 @@ class CommercialController extends Controller
 
              $Clients->where('fullName', 'like', '%' . $fullName . '%')
                     ->orWhere('tradeName', 'like', '%' . $fullName . '%');
+                  
         }
 
         if (isset($phone) && $phone !== null) {
@@ -47,9 +49,8 @@ class CommercialController extends Controller
 
              $Clients->where('registerNumber', 'like', '%' . $registerNumber . '%');
         }
-
+        
       $lastData = $Clients->where("client_type","commercial")->paginate($perPage)->withQueryString();
-
       return view("client.commercial.view" ,[ "Data"=> $lastData] );
     }
 

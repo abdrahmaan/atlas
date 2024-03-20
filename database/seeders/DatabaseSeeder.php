@@ -8,6 +8,7 @@ use Illuminate\Database\Seeder;
 use Database\Factories\ClientFactory;
 use Database\Factories\ClientOneFactory;
 use App\Models\Client;
+use App\Models\User;
 use Faker\Factory as Faker;
 
 class DatabaseSeeder extends Seeder
@@ -42,5 +43,11 @@ class DatabaseSeeder extends Seeder
                 "postalCode"  => $faker->randomNumber(6),
             ]);
         }
+
+        User::create([
+            "name" => "Abdulrahman Hamdy",
+            "username" => "bedoohamdy",
+            "password" => "112233",
+        ]);
     }
 }

@@ -35,7 +35,7 @@
                                 <div class="col-lg-4 my-1">
                                         <div class="form-group  mx-2 d-block">
                                             <label for="fullName" class="text-right w-100 my-1">الإسم ثلاثى</label>
-                                            <input name="fullName" readonly value="{{$Data->fullName}}" type="text" class="form-control text-right" id="exampleInputEmail1" placeholder="الإسم ثلاثى">
+                                            <input name="fullName" readonly value="{{$Data->tradeName ?? $Data->fullName}}" type="text" class="form-control text-right" id="exampleInputEmail1" placeholder="الإسم ثلاثى">
                                         </div>
                                 </div>
                               

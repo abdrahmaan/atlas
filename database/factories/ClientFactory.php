@@ -28,6 +28,7 @@ class ClientFactory extends Factory
                 "gender"  => "Male",
                 "phone"  => $this->faker->phoneNumber(),
                 "phoneTwo"  => $this->faker->phoneNumber(),
+                "email"  => $this->faker->email(),
                 "address"  => $this->faker->streetAddress(),
                 "district"  => $this->faker->randomElement(["الخبر","المدينة"]),
                 "city"  => $this->faker->randomElement(["الرياض","جدة"]),

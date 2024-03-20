@@ -63,10 +63,18 @@
                                         </div>
                                 </div>       
                             <!--  العنوان -->
-                            <div class="col-lg-9 my-1">
+                            <div class="col-lg-6 my-1">
                                 <div class="form-group  mx-2 d-block">
                                     <label for="address" class="text-right w-100 my-1">العنوان</label>
                                     <input name="address" type="text" class="form-control text-right" id="exampleInputEmail1" placeholder="العنوان">
+                                </div>
+                            </div>
+
+                            <!--  الإيميل -->
+                            <div class="col-lg-3 my-1">
+                                <div class="form-group  mx-2 d-block">
+                                    <label for="email" class="text-right w-100 my-1">الإيميل</label>
+                                    <input name="email" type="email" class="form-control text-right" id="exampleInputEmail1" placeholder="البريد الإلكترونى">
                                 </div>
                             </div>
 
@@ -165,6 +173,10 @@
                 address: {
                     required: true
                 },
+                email: {
+                    required: true,
+                    email: true
+                },
                 postalCode: {
                     required: true
                 },
@@ -197,6 +209,10 @@
                 },
                 address: {
                     required: "العنوان مطلوب"
+                },
+                email: {
+                    required: "البريد الإلكترونى مطلوب",
+                    email: "أدخل بريد إلكترونى صحيح",
                 },
                 postalCode: {
                     required: "الرمز البريدي مطلوب"

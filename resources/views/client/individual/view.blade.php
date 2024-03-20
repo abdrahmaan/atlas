@@ -118,6 +118,7 @@
                   <th>الجنس</th>
                   <th>رقم التليفون</th>
                   <th>رقم تليفون أخر</th>
+                  <th>البريد الإلكترونى</th>
                   <th>العنوان</th>
                   <th>الحى</th>
                   <th>المدينة</th>
@@ -140,6 +141,7 @@
                            <td>{{$row->gender}}</td>
                            <td>{{$row->phone}}</td>
                            <td>{{$row->phoneTwo}}</td>
+                           <td>{{$row->email}}</td>
                            <td>{{$row->address}}</td>
                            <td>{{$row->district}}</td>
                            <td>{{$row->city}}</td>
@@ -161,6 +163,7 @@
                         <th>الجنس</th>
                         <th>رقم التليفون</th>
                         <th>رقم تليفون أخر</th>
+                        <th>البريد الإلكترونى</th>
                         <th>العنوان</th>
                         <th>الحى</th>
                         <th>المدينة</th>

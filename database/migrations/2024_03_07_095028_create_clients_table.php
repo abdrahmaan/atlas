@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string("registerNumber")->nullable();
             $table->string("phone");
             $table->string("phoneTwo");
+            $table->string("email");
             $table->string("address");
             $table->string("district");
             $table->string("city");

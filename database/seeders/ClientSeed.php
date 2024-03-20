@@ -35,6 +35,7 @@ class ClientSeed extends Seeder
                 "registerNumber"  => $faker->randomNumber(7),
                 "phone"  => $faker->phoneNumber(),
                 "phoneTwo"  => $faker->phoneNumber(),
+                "email"  => $faker->email(),
                 "address"  => $faker->streetAddress(),
                 "district"  => $faker->randomElement(["الخبر","المدينة"]),
                 "city"  => $faker->randomElement(["الرياض","جدة"]),

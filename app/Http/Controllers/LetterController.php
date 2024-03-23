@@ -7,6 +7,7 @@ use App\Models\Client;
 use App\Models\Letter;
 use Mail;
 use App\Mail\LetterMail;
+use App\Mail\ClientMail;
 
 
 class LetterController extends Controller
@@ -92,7 +93,7 @@ class LetterController extends Controller
 
         $client_email = Client::where("id",$request->client_id)->get()->first()->email;
 
-       $email = Mail::to($client_email)->send(new LetterMail($message_data));
+       $email = Mail::to($client_email)->send(new ClientMail($message_data));
 
         if ($email) {
             $request["op"] = session()->get("user-data")["name"];

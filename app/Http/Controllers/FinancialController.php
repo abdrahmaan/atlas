@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Mail;
 use App\Mail\LetterMail;
+use App\Mail\ClientMail;
 use Illuminate\Http\Request;
 use App\Models\Client;
 use App\Models\FinancialRequest;
@@ -110,13 +111,13 @@ class FinancialController extends Controller
         $message_data = [
             "title" => "مطالبة مالية",
             "name" => $request->fullName,
-            "message" => "عميلنا العزيز نأمل منكم سداد دفعة $request->amount وقيمتها $request->amount_letters وذلك حسب العقد رقم $request->contract_id ولكم جزيل الشكر",
+            "message" => "عميلنا العزيز نأمل منكم سداد دفعة $request->amount ر.س وقيمتها $request->amount_letters وذلك حسب العقد رقم $request->contract_id ولكم جزيل الشكر",
 
         ];
 
        $client_email = Client::where("id",$request->client_id)->get()->first()->email;
 
-       $email = Mail::to($client_email)->send(new LetterMail($message_data));
+       $email = Mail::to($client_email)->send(new ClientMail($message_data));
        
        
        if ($email) {
